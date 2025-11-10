@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Calvin MARQUETOUT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Modèle de CV Professionnel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
         /* CSS intégré */
@@ -12,305 +12,247 @@
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
+            padding: 0;
+            background-color: #f4f7f6;
             color: #333;
         }
 
         .cv-container {
-            max-width: 900px;
-            margin: 0 auto;
+            display: flex;
+            max-width: 1000px;
+            margin: 30px auto;
             background: #fff;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .header {
+        /* Colonne de gauche (Informations personnelles) */
+        .sidebar {
+            width: 300px;
+            background-color: #2c3e50; /* Bleu foncé */
+            color: #ecf0f1; /* Gris clair */
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .profile-section {
             text-align: center;
-            border-bottom: 3px solid #007bff;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .profile-photo {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
+            border: 5px solid #3498db; /* Bleu vif */
             margin-bottom: 15px;
-            border: 4px solid #007bff;
-            /* Remplacer par l'URL ou le chemin de votre photo */
         }
 
-        h1 {
-            font-size: 2.2em;
-            color: #2c3e50;
+        .sidebar h2 {
+            font-size: 1.8em;
             margin: 0;
+            color: #fff;
         }
 
-        h2 {
-            font-size: 1.2em;
-            color: #007bff;
-            font-weight: 400;
+        .sidebar h3 {
+            font-size: 1em;
+            font-weight: 300;
+            color: #bdc3c7;
             margin-top: 5px;
         }
 
-        h3 {
-            font-size: 1.4em;
-            color: #007bff;
-            border-bottom: 2px solid #ddd;
+        .contact-list, .skill-list, .language-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .contact-list li, .language-list li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-list li span:first-child {
+            margin-right: 10px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .sidebar h4 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 5px;
-            margin-top: 25px;
+            margin-top: 30px;
             margin-bottom: 15px;
-        }
-
-        h4 {
             font-size: 1.1em;
+        }
+
+        /* Colonne de droite (Expériences/Formations) */
+        .main-content {
+            flex-grow: 1;
+            padding: 30px;
+        }
+
+        .main-content h2 {
+            font-size: 1.8em;
             color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        p.availability {
-            font-style: italic;
-            color: #555;
-            margin-top: 10px;
-        }
-
-        .section {
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 5px;
             margin-bottom: 20px;
         }
 
-        .item {
-            margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 3px solid #007bff;
+        .section-item {
+            margin-bottom: 25px;
+            border-left: 4px solid #f39c12; /* Orange pour l'accent */
+            padding-left: 15px;
         }
 
-        .item p {
-            margin: 3px 0;
-        }
-
-        .date {
-            font-weight: bold;
-            color: #555;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
+        .section-item h3 {
+            font-size: 1.2em;
+            color: #2c3e50;
             margin: 0;
         }
 
-        ul li {
+        .section-item h4 {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin: 5px 0;
+            font-weight: normal;
+        }
+
+        .date {
+            font-weight: 700;
+            color: #e67e22;
+            display: block;
             margin-bottom: 5px;
+        }
+
+        .section-item ul {
+            list-style: disc;
             padding-left: 20px;
-            position: relative;
+            font-size: 0.9em;
         }
 
-        ul li::before {
-            content: '•';
-            color: #007bff;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+        .section-item p {
+            font-size: 0.95em;
         }
 
-        /* Style spécifique pour les coordonnées (sans puces) */
-        .contact-info ul li::before {
-            content: '';
-        }
-        .contact-info ul li {
-            padding-left: 0;
-            text-align: center;
-        }
-        .contact-info ul {
-            text-align: center;
-        }
-
-        /* Mise en page des colonnes pour les compétences/langues/centres d'intérêt */
-        .skills-interests-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .skills-interests-container h3 {
-            border-bottom: 1px solid #ddd;
-            margin-top: 0;
-            padding-bottom: 5px;
-        }
-
-        .skills, .languages, .interests {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        /* Media Query pour un affichage sur mobile */
-        @media (max-width: 600px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .cv-container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            .skills-interests-container {
                 flex-direction: column;
-                gap: 0;
+                margin: 0;
+                box-shadow: none;
             }
-            .item {
-                margin-left: 0;
+            .sidebar {
+                width: 100%;
+            .main-content {
+
+                padding: 20px;
             }
+
         }
     </style>
+
 </head>
 <body>
     <div class="cv-container">
 
-        <header class="header">
-            <img src="chemin/vers/votre/photo.jpg" alt="Photo de Calvin MARQUETOUT" class="profile-photo">
-            [cite_start]<h1>Calvin MARQUETOUT [cite: 8]</h1>
-            [cite_start]<h2>Recherche Stage en informatique [cite: 9]</h2>
-            <p class="availability">
-                [cite_start]Étudiant en terminal professionnel SN (système numérique )[cite: 10]. <br>
-                [cite_start]Disponible du **02/12/2024 au 21/12/2024** (3 semaines) [cite: 11] [cite_start]et du **06/01/2025 au 24/01/2025** (3 semaines)[cite: 11].
-            </p>
-        </header>
 
-        <section class="contact-info">
-            <h3>Coordonnées</h3>
-            <ul>
-                [cite_start]<li>Né le 02/05/2007 [cite: 1] [cite_start]à Issy-les-Moulineaux [cite: 3]</li>
-                [cite_start]<li>50 rue d'Erevan, 92130 [cite: 2] Issy-les-Moulineaux</li>
-                [cite_start]<li>0769623130 [cite: 4]</li>
-                [cite_start]<li>calvin.marquetout92@gmail.com [cite: 5, 6]</li>
-                [cite_start]<li>Nationalité : Français [cite: 7]</li>
+        <div class="sidebar">
+            <div class="profile-section">
+
+                <img src="votre-photo.jpg" alt="Photo de profil" class="profile-photo">
+
+                <h2>[Votre Prénom] [Votre Nom]</h2>
+                <h3>[Votre Titre/Poste Recherché]</h3>
+
+            </div>
+
+
+            <h4>Coordonnées</h4>
+
+            <ul class="contact-list">
+
+                <li><span>📍</span> 50 rue d'erevan</li>
+
+                <li><span>📞</span>0769623130</li>
+                <li><span>✉️</span> calvin.marquetout@gmail.com</li>
+                <li><span>🔗</span> <a href="[Lien LinkedIn/Portfolio]" style="color: #3498db;">LinkedIn/Portfolio</a></li>
             </ul>
-        </section>
-
-        <section class="section">
-            <h3>🎓 Formations et Diplômes</h3>
-
-            <div class="item">
-                [cite_start]<h4>Bac professionnel système numérique [cite: 13]</h4>
-                [cite_start]<p class="date">De 2022 à 2025 [cite: 14]</p>
-                [cite_start]<p>Lycée La Salle Saint-Nicolas, Issy-les-Moulineaux [cite: 14]</p>
-            </div>
-
-            <div class="item">
-                [cite_start]<h4>DNB [cite: 22] (Diplôme National du Brevet)</h4>
-                [cite_start]<p class="date">2022 [cite: 23]</p>
-
-                [cite_start]<p>Collège de la Paix, Issy-les-Moulineaux [cite: 23]</p>
-            </div>
 
 
-            <div class="item">
+            <h4>Compétences Techniques</h4>
+            <ul class="skill-list">
+                <li>[Compétence 1]</li>
 
-                [cite_start]<h4>ASSR2 [cite: 24]</h4>
-                [cite_start]<p class="date">2022 [cite: 25]</p>
-                [cite_start]<p>Collège de la Paix, Issy-les-Moulineaux [cite: 25]</p>
+                <li>[Compétence 2]</li>
 
-            </div>
+                <li>[Compétence 3]</li>
+                <li>[Compétence 4]</li>
+            </ul>
 
-        </section>
+            <h4>Langues</h4>
+            <ul class="language-list">
+                <li>[Langue 1] : [Niveau]</li>
+                <li>[Langue 2] : [Niveau]</li>
+            </ul>
+            
+            <h4>Centres d'intérêt</h4>
+            <p style="font-size: 0.9em;">[Liste d'intérêts séparés par des virgules, ex: Sport, Lecture, Bénévolat]</p>
 
-        <section class="section">
-            [cite_start]<h3>💼 Expériences professionnelles (Stages Bac Pro SN) [cite: 26]</h3>
+        </div>
 
+        <div class="main-content">
+            
+            <h2>Objectif / Profil</h2>
+            <p>
+                [Rédigez ici un bref paragraphe (2-3 lignes) décrivant votre objectif professionnel et les atouts clés que vous apportez au poste (ex: Jeune diplômé passionné par [domaine], avec [X] années d'expérience en [activité]. Je recherche un poste de [Titre] pour mettre à profit mes compétences en [Compétences clés].]
+            </p>
 
-            <div class="item">
-
-                [cite_start]<h4>Stage de première Bac pro SN [cite: 27]</h4>
-
-                [cite_start]<p class="date">De juin 2024 à juillet 2024 [cite: 28]</p>
-
-                [cite_start]<p>Centre de Transfusion Sanguine des Armées, 1 Rue Lieutenant Raoul Batany [cite: 28, 29]</p>
-
+            <h2>Expérience Professionnelle</h2>
+            
+            <div class="section-item">
+                <span class="date">[Date de début] - [Date de fin]</span>
+                <h3>[Titre du Poste]</h3>
+                <h4>[Nom de l'Entreprise], [Ville]</h4>
                 <ul>
-
-                    [cite_start]<li>Participation aux interventions avec des techniciens informatiques [cite: 29]</li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="item">
-                [cite_start]<h4>Stage de première Bac pro SN [cite: 30]</h4>
-
-                [cite_start]<p class="date">De novembre 2023 [cite: 31] [cite_start]à décembre 2023 [cite: 33]</p>
-                [cite_start]<p>Centre de Transfusion Sanguine des Armées, 1 Rue Lieutenant Raoul Batany [cite: 32, 34]</p>
-
-                <ul>
-
-                    [cite_start]<li>Participation aux interventions avec des techniciens informatiques [cite: 35]</li>
-
-                </ul>
-
-            </div>
-
-            <div class="item">
-                [cite_start]<h4>Stage de seconde Bac pro SN [cite: 36]</h4>
-                [cite_start]<p class="date">De juin 2023 à juillet 2023 [cite: 37]</p>
-
-                [cite_start]<p>Exane, 4 Rue d'Antin, 75002 Paris [cite: 37]</p>
-
-                <ul>
-                    [cite_start]<li>Participation à toutes les interventions, assistance aux techniciens informatiques [cite: 38]</li>
-
+                    <li>[Description de votre mission / réalisation 1. Utilisez des chiffres si possible.]</li>
+                    <li>[Description de votre mission / réalisation 2.]</li>
+                    <li>[Description de votre mission / réalisation 3.]</li>
                 </ul>
             </div>
 
-            <div class="item">
-                [cite_start]<h4>Stage de seconde Bac pro SN [cite: 39]</h4>
-                [cite_start]<p class="date">De janvier 2023 à février 2023 [cite: 40, 42]</p>
-                [cite_start]<p>HIA Percy, 2 Rue Lieutenant Raoul Batany, 92140 Clamart [cite: 41, 43]</p>
+            <div class="section-item">
+                <span class="date">[Date de début] - [Date de fin]</span>
+                <h3>[Titre du Poste/Stage Précédent]</h3>
+                <h4>[Nom de l'Entreprise], [Ville]</h4>
                 <ul>
-
-                    [cite_start]<li>Participation aux interventions avec des techniciens informatiques [cite: 44]</li>
+                    <li>[Description de votre mission / réalisation 1.]</li>
+                    <li>[Description de votre mission / réalisation 2.]</li>
                 </ul>
             </div>
 
-            <div class="item">
-                [cite_start]<h4>Stage - Sensibilisation Cybersécurité [cite: 45]</h4>
-                [cite_start]<p class="date">Janvier 2022 [cite: 46]</p>
-                [cite_start]<p>Service de Protection Radiologique des Armées, Hôpital Percy à Issy-les-Moulineaux [cite: 46, 47]</p>
-                <ul>
-                    [cite_start]<li>Participation à une séance de sensibilisation à la cybersécurité [cite: 48]</li>
-                    [cite_start]<li>Explication d'outils liés à la cybersécurité [cite: 49]</li>
-                </ul>
-            </div>
-        </section>
+            <h2>Formation</h2>
 
-        <section class="section skills-interests-container">
-            <div class="skills">
-                [cite_start]<h3>💻 Compétences [cite: 50]</h3>
-                <ul>
-                    [cite_start]<li>Informatique [cite: 51]</li>
-                </ul>
+            <div class="section-item">
+                <span class="date">[Année de début] - [Année de fin]</span>
+                <h3>[Intitulé du Diplôme (ex: Bac Pro SN)]</h3>
+                <h4>[Nom de l'Établissement], [Ville]</h4>
+                <p>
+                    [Informations supplémentaires sur la formation, ex: Option choisie, Projets majeurs.]
+                </p>
             </div>
 
-            <div class="languages">
-                [cite_start]<h3>🗣️ Langues [cite: 15]</h3>
-                <ul>
-                    [cite_start]<li>Espagnol [cite: 16]</li>
-                    [cite_start]<li>Anglais [cite: 17]</li>
-                </ul>
+            <div class="section-item">
+                <span class="date">[Année d'obtention]</span>
+                <h3>[Intitulé du Diplôme Précédent (ex: DNB)]</h3>
+                <h4>[Nom de l'Établissement], [Ville]</h4>
             </div>
 
-            <div class="interests">
-                [cite_start]<h3>❤️ Centres d'intérêt [cite: 18]</h3>
-                <ul>
-                    [cite_start]<li>Sport [cite: 19]</li>
-                    [cite_start]<li>Basket [cite: 20]</li>
-                </ul>
-            </div>
-        </section>
-
+        </div>
     </div>
 </body>
 </html>
-h
